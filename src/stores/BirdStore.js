@@ -1,6 +1,11 @@
-import {observable, action, computed} from 'mobx';
+import {observable, action, computed, autorun} from 'mobx';
 
 class BirdStore {
+    constructor(){
+        autorun(() => {
+          console.log("the birds: ", this.birdCount)
+        }, {delay: 5000})
+      }
     @observable birds = []; // when we say this is observable, mobx wraps it, listening to changes
 
     @action addBird = (bird) => { // action is a function that changes value of property you're observing
