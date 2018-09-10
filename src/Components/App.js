@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {inject, observer} from 'mobx-react';
+import NavBar from './NavBar/NavBar';
 
 
 @inject('BirdStore') // allows us to inject the store into this app. Inspect the page with ReactDev tools to see this component
@@ -21,6 +22,7 @@ class App extends Component {
 
     return (
       <div className="App">
+      <NavBar />
         <h2>
           You have {BirdStore.birdCount} birds.
         </h2>

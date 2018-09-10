@@ -4,7 +4,7 @@ class BirdStore {
     constructor(){
         autorun(() => {
           console.log("the birds: ", this.birdCount)
-        }, {delay: 5000})
+        }, {delay: 500}) // can feed a delay, errors, etc into autorun.
       }
     @observable birds = []; // when we say this is observable, mobx wraps it, listening to changes
 

@@ -3,7 +3,9 @@ import {observable, action, computed, autorun} from 'mobx';
 class UserStore {
     constructor(){
         autorun(() => {
-          console.log("Welcome: ", this.user)
+            if(this.user.username){
+                console.log("Welcome: ", this.user)
+            }
         })
       }
     @observable user = {}; // when we say this is observable, mobx wraps it, listening to changes
@@ -14,9 +16,6 @@ class UserStore {
     @computed get getUserInfo () { //used to access the data and perform data on it, this will
         return this.user;        // access the data and perform a change on it.
     }
-    // @computed get birdList () {
-    //     return this.birds;       ////// this isn't needed b/c the birds list is already reached
-    // }
 }
 
 const store =  new UserStore(); // the reason we're doing this, is across our application, 
