@@ -17,7 +17,7 @@ class App extends Component {
 
   render() {
     const {BirdStore} = this.props; // lets destructure the BirdStore out of props
-    console.log(this.props)
+    console.log(typeof(BirdStore.birds), BirdStore.birds)
 
     return (
       <div className="App">
