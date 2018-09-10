@@ -4,8 +4,8 @@ import {inject, observer} from 'mobx-react';
 
 
 @inject('BirdStore') // allows us to inject the store into this app. Inspect the page with ReactDev tools to see this component
-//passes the store in as a prop
-@observer // allows us to watch for data changes, and force a rerender.
+                      //passes the store in as a prop
+@observer // allows us to watch for data changes, and force a rerender. Just reacting to changes
 class App extends Component {
   
   handleSubmission = e => {
@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   render() {
-    const {BirdStore} = this.props;
+    const {BirdStore} = this.props; // lets destructure the BirdStore out of props
     console.log(this.props)
 
     return (
