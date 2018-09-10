@@ -7,7 +7,10 @@ class BirdStore {
         this.birds.push(bird)
     }
     @computed get birdCount () { //used to access the data and perform data on it, this will
-        return this.birds.size;        // access the data and perform a change on it.
+        return this.birds.length;        // access the data and perform a change on it.
+    }
+    @computed get birdList () {
+        return this.birds;
     }
 }
 
